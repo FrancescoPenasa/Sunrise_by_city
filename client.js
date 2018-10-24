@@ -11,8 +11,12 @@ const getLocation = async url => {
   try {
     const response = await fetch(url);
 	const json = await response.json();
+	console.log("json.result = ")
 	console.log(json.results);
-	//console.log(json.results.0.locations.0.latLng.lng);
+
+	console.log("json.FUNZIONAT")
+	console.log(json.results[0].locations[0].latLng.lng);
+	console.log("JSON")
     console.log(json)
   } catch (error) {
 	  console.log("vai vai")
