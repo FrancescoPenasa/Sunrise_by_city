@@ -1,27 +1,26 @@
 {
-  "name": "api_test",
+  "name": "sunrise_by_city",
   "version": "1.0.0",
-  "description": "bzz bzz",
-  "main": "index.js",
-  "scripts": {
-    "start": "node api.js",
+  "description": "first lesson api bzz bzz",
+  "main": "api.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "node-fetch": "^2.2.0"
+  },
+  "devDependencies": {},
+    "scripts": {
+	"start": "node api.js"
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FrancescoPenasa/Api_Test.git"
+    "url": "git+https://github.com/FrancescoPenasa/Sunrise_by_city.git"
   },
-  "author": "FP",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/FrancescoPenasa/Api_Test/issues"
+    "url": "https://github.com/FrancescoPenasa/Sunrise_by_city/issues"
   },
-  "homepage": "https://github.com/FrancescoPenasa/Api_Test#readme",
-  "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.3",
-    "node-fetch": "^2.2.0",
-    "readline-sync": "^1.4.9"
-  },
-  "devDependencies": {}
+  "homepage": "https://github.com/FrancescoPenasa/Sunrise_by_city#readme"
 }
