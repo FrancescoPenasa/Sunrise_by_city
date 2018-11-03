@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const KEY = process.env.def;
+const KEY = process.env.KEY_MAPQUEST || "TEk64IAYCLwiOukbMn3UC878UMWRHxJD";
 
 const getSunrisetime = async (url_mapquest,res) => {
   try {
