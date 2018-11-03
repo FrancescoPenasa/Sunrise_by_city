@@ -11,13 +11,13 @@
   "devDependencies": {},
     "scripts": {
 	"start": "node api.js"
-    "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/FrancescoPenasa/Sunrise_by_city.git"
   },
-  "author": "",
+  "author": "Francesco Penasa",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/FrancescoPenasa/Sunrise_by_city/issues"

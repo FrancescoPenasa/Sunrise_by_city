@@ -1,28 +1,12 @@
 const express = require('express');
+const fetch = require('node-fetch');
+var bodyParser = require('body-parser');
+
 const app = express();
 const PORT = process.env.PORT || 3000;
- 
-var courses_offered = [{id: 21, name: 'HCI'},
-		       {id: 28, name:'sweng'}];
+const KEY = process.env.def;
 
-app.get('/', (req, res) => res.send('Hello World!'));
- 
-app.get('/courses', (req, res) => {
-   res.json(courses_offered)
-});
- 
-
-app.listen(PORT, () => console.log('Example app listening on port '+ PORT));
-
-
-
-/**
- * 
- * const fetch = require('node-fetch');
-const KEY = "TEk64IAYCLwiOukbMn3UC878UMWRHxJD";
-const url_mapquest = "http://www.mapquestapi.com/geocoding/v1/address?key="+KEY+"&location="+process.argv[2]+","+process.argv[3];
-
-const getSunrisetime = async url_mapquest => {
+const getSunrisetime = async (url_mapquest,res) => {
   try {
     const response = await fetch(url_mapquest);
 		const json_mapquest = await response.json();
@@ -35,14 +19,27 @@ const getSunrisetime = async url_mapquest => {
 		const res_sunrise = await fetch(url_sunrise);
 		const json_sunrise = await res_sunrise.json();
 		
-		console.log("Sunrise of "+process.argv[2]+","+process.argv[3]+" is: \n");
 		console.log(json_sunrise);
+		
+		//response	
+  	res.json(json_sunrise);
+		res.status(201);
+		//res.redirect("/city");
 
   } catch (error) {
     console.log(error);
   }
 };
 
-getSunrisetime(url_mapquest);
 
- */
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+app.use('/', express.static('public'));
+
+app.post('/city', function (req, res) {
+	const url_mapquest = "http://www.mapquestapi.com/geocoding/v1/address?key=" + KEY + "&location=" + req.body.city + "," + req.body.state;
+	getSunrisetime(url_mapquest, res);	
+});
+
+
+app.listen(PORT, () => console.log('Example app listening on port '+ PORT));
