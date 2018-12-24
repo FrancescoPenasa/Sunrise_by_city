@@ -2,9 +2,9 @@
   "name": "sunrise_by_city",
   "version": "1.0.0",
   "description": "first lesson api bzz bzz",
-    "main": "api.js",
-    "scripts": {
-    "start": "node api.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
     "test": "jest"
   },
   "dependencies": {
