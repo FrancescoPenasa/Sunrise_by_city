@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const fetch = require('node-fetch');
 
 const city = express.Router();
-const KEY = process.env.KEY_MAPQUEST || "?key=TEk64IAYCLwiOukbMn3UC878UMWRHxJD";
+const KEY_MAPQUEST = process.env.KEY_MAPQUEST || "YOUR KEY";
 const URL_MAPQUEST = "http://www.mapquestapi.com/geocoding/v1/address";
 const URL_SUNRISESUNSET = "https://api.sunrise-sunset.org/json?";
 
@@ -44,7 +44,7 @@ async function getSunrisetime  (url, req, res){
 city.post('/', async (req, res) => {
   try {
     let input = inputValid(req);
-    let json = await getSunrisetime(URL_MAPQUEST + KEY + input, req, res);
+    let json = await getSunrisetime(URL_MAPQUEST + KEY_MAPQUEST + input, req, res);
     res.json(json);
     res.status(200);
 
