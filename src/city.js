@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const fetch = require('node-fetch');
 
 const city = express.Router();
-const KEY_MAPQUEST = process.env.KEY_MAPQUEST || "YOUR KEY";
+const KEY_MAPQUEST = "?key=TEk64IAYCLwiOukbMn3UC878UMWRHxJD";
 const URL_MAPQUEST = "http://www.mapquestapi.com/geocoding/v1/address";
 const URL_SUNRISESUNSET = "https://api.sunrise-sunset.org/json?";
 
